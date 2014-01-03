@@ -1,5 +1,10 @@
+#$.getJSON('data.php', function(data) {
+#$.each(data, function(fieldName, fieldValue) {
+#$("#" + fieldName).val(fieldValue);
+#});
+#});
 
-func = () ->
+getActivities = () ->
   alert $('body')
 
-func()
+getActivities()
