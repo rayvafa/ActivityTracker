@@ -1,4 +1,10 @@
 (function() {
-  alert('Hi there');
+  var func;
+
+  func = function() {
+    return alert($('body'));
+  };
+
+  func();
 
 }).call(this);

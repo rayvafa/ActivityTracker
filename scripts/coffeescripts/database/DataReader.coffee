@@ -1,2 +1,5 @@
 
-alert 'Hi there'
+func = () ->
+  alert $('body')
+
+func()

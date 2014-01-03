@@ -13,11 +13,30 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: 'scripts/javascripts/**/*.js',
-                dest: 'scripts/script.min.js'
+                dest: 'scripts/scripts.min.js'
+            },
+            libs: {
+                src: 'scripts/lib/**/*.js',
+                dest: 'scripts/libs.min.js'
             }
         },
         sass: {
             dist: {
+                options: {
+                    style: 'compressed'  // expanded or compressed
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'styles/sass/',
+                    src: ['style.scss'],
+                    dest: 'styles/',
+                    ext: '.min.css'
+                }]
+            },
+            build: {
+                options: {
+                    style: 'expanded'  // expanded or compressed
+                },
                 files: [{
                     expand: true,
                     cwd: 'styles/sass/',
