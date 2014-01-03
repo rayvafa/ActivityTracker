@@ -5,6 +5,10 @@
 #});
 
 getActivities = () ->
-  alert $('body')
+  console.log 'getActivities'
+  $.getJSON 'php/database/activities.php', (data) =>
+    data
+  .fail () ->
+      {}
 
 getActivities()

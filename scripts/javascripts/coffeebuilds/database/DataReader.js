@@ -1,10 +1,16 @@
 (function() {
-  var func;
+  var getActivities;
 
-  func = function() {
-    return alert($('body'));
+  getActivities = function() {
+    var _this = this;
+    console.log('getActivities');
+    return $.getJSON('php/database/activities.php', function(data) {
+      return data;
+    }).fail(function() {
+      return {};
+    });
   };
 
-  func();
+  getActivities();
 
 }).call(this);
