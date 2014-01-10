@@ -13,34 +13,42 @@
 </head>
 
 <body>
-<div>
-    <label>
-        Activity:
-        <select></select>
-    </label>
-</div>
+<form id="track-form" action="php/database/track.php" method="post">
+<!--<div>-->
+    <!--<label>-->
+        <!--Activity:-->
+        <!--<select name="activity-list">-->
+            <!--<option value="1">Weight</option>-->
+            <!--<option value="2">Running</option>-->
+        <!--</select>-->
+    <!--</label>-->
+<!--</div>-->
 <div>
     <label>
         Tracker:
-        <select></select>
+        <select name="tracker-list">
+            <option value="1">Weight</option>
+            <option value="2">PUSH-UP</option>
+        </select>
     </label>
 </div>
 <div>
     <label>
         Number:
-        <input type="text" name="numberValue">
+        <input type="number" name="quantity" min="0" max="1000000" autocomplete="off" placeholder="Quantity" required>
     </label>
 </div>
+<!--<div>-->
+    <!--<label>-->
+        <!--Pass:-->
+        <!--<input type="password" name="password" required placeholder="Enter the password">-->
+    <!--</label>-->
+<!--</div>-->
 <div>
-    <label>
-        Pass:
-        <input type="text" name="password">
-    </label>
+    <button type="submit">Submit</button>
+    <button type="reset">Result</button>
 </div>
-<div>
-    <button>Submit</button>
-    <button>Result</button>
-</div>
+</form>
 <script src="scripts/scripts.min.js"></script>
 </body>
 </html>
