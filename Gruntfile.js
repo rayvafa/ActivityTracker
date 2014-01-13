@@ -21,18 +21,6 @@ module.exports = function(grunt) {
             }
         },
         sass: {
-            dist: {
-                options: {
-                    style: 'compressed'  // expanded or compressed
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'styles/sass/',
-                    src: ['style.scss'],
-                    dest: 'styles/',
-                    ext: '.min.css'
-                }]
-            },
             build: {
                 options: {
                     style: 'expanded'  // expanded or compressed
@@ -41,9 +29,24 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'styles/sass/',
                     src: ['style.scss'],
-                    dest: 'styles/',
-                    ext: '.css'
+                    dest: 'styles/css/',
+                    ext: '-sass.css'
                 }]
+            }
+        },
+        cssmin: {
+            minify: {
+                expand: true,
+                cwd: 'styles/css/',
+                src: ['*.css', '!*.min.css'],
+                dest: 'styles/css/',
+                ext: '.min.css'
+            }
+        },
+        concat_css: {
+            concat: {
+                src: 'styles/css/**/*.min.css',
+                dest: 'styles/style.min.css'
             }
         }
     });
@@ -52,8 +55,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-concat-css');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'coffee', 'uglify']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'concat_css', 'coffee', 'uglify']);
 
 };
