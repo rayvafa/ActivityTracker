@@ -15,7 +15,7 @@
 
 <body>
 <div class="container">
-    <form id="track-form" action="php/database/track.php" method="post" class="navbar-form navbar-left">
+    <form id="track-form" action="php/database/track.php" method="post" role="form">
         <!--<div>-->
         <!--<label>-->
         <!--Activity:-->
@@ -25,21 +25,22 @@
         <!--</select>-->
         <!--</label>-->
         <!--</div>-->
-        <div class="row">
-            <span class="label label-default">Tracker:</span>
-            <select name="tracker-list" class="form-control">
+        <div class="form-group">
+            <label for="tracker-list">Tracker:</label>
+            <select id="tracker-list" class="form-control">
+                <option value="0">Test</option>
                 <option value="1">Weight</option>
                 <option value="2">PUSH-UP</option>
             </select>
         </div>
-        <div class="row">
-            <span class="label label-default">Quantity:</span>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
             <input
                     type="number"
-                    name="quantity" min="0" max="1000000"
+                    id="quantity" min="0" max="1000000"
                     autocomplete="off" placeholder="Quantity"
                     class="form-control"
-                    required />
+                    required/>
         </div>
         <!--<div>-->
         <!--<label>-->
@@ -47,11 +48,9 @@
         <!--<input type="password" name="password" required placeholder="Enter the password">-->
         <!--</label>-->
         <!--</div>-->
-        <div class="row">
-            <div class="btn-group">
-                <button type="submit" class="btn btn-default">Submit</button>
-                <button type="reset" class="btn btn-default">Result</button>
-            </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="reset" class="btn btn-default">Result</button>
         </div>
     </form>
 </div>

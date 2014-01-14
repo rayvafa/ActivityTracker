@@ -11,7 +11,7 @@ $tracker = $_POST["tracker-list"];
 $quantity = $_POST["quantity"];
 //$pass = $_POST["password"];
 // Create connection
-$con=mysqli_connect("203.170.85.245","ramoonph_test","Iam21777","ramoonph_test");
+$con = mysqli_connect("203.170.85.245", "ramoonph_test", "Iam21777", "ramoonph_test");
 
 // Check connection
 if (mysqli_connect_errno()) {
@@ -20,11 +20,9 @@ if (mysqli_connect_errno()) {
 
 $sql = "INSERT INTO track_point ( tracker_id, quantity, track_date) VALUES ( '$tracker', '$quantity', Now())";
 //echo $sql;
-if (!mysqli_query($con,$sql))
-{
+if (!mysqli_query($con, $sql)) {
     die('Error: ' . mysqli_error($con));
 }
-echo "1 record added";
 
 mysqli_close($con);
 ?>
@@ -35,19 +33,30 @@ mysqli_close($con);
     <title>Track - Activity Tracker</title>
     <meta name="description" content="Tracking my activities">
     <meta name="author" content="Ray Vafa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/style.min.css">
-    <script src="scripts/libs.min.js"></script>
+    <link rel="stylesheet" href="../../styles/style.min.css">
+    <script src="../../scripts/libs.min.js"></script>
 </head>
 
 <body>
-<br/>
-<br/>
-<br/>
-<div><a href="../../index.html">Track another activity</a></div>
-<br/>
-<div>Go to result page.</div>
+<div class="container">
+    <div class="alert alert-success">
+        1 record added
+    </div>
 
-<script src="scripts/scripts.min.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="navbar-text navbar-left">
+            <a href="../../index.html" class="navbar-link">Track another activity</a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-default">
+        <div class="navbar-text navbar-left">
+            Go to result page.
+        </div>
+    </nav>
+
+</div>
+<script src="../../scripts/scripts.min.js"></script>
 </body>
 </html>
