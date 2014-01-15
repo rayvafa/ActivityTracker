@@ -41,21 +41,15 @@ mysqli_close($con);
 
 <body>
 <div class="container">
-    <div class="alert alert-success">
-        1 record added
-    </div>
-
-    <nav class="navbar navbar-default">
-        <div class="navbar-text navbar-left">
-            <a href="../../index.html" class="navbar-link">Track another activity</a>
-        </div>
-    </nav>
-    <nav class="navbar navbar-default">
-        <div class="navbar-text navbar-left">
-            Go to result page.
-        </div>
-    </nav>
-
+	<div class="list-group">
+		<div class="list-group-item alert alert-success">
+			1 record added
+		</div>
+		<a href="../../index.html" class="list-group-item">Track another activity</a>
+		<div class="list-group-item">
+			Go to result page.
+		</div>
+	</div>
 </div>
 <script src="../../scripts/scripts.min.js"></script>
 </body>
